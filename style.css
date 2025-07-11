@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'Rodin';
+    src: url('fonts/rodin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Yuruka';
+    src: url('fonts/yuruka.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('assets/bg.png');
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 10px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#title {
+    font-family: 'Yuruka', sans-serif;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+canvas {
+    border-radius: 50%;
+    border: 1px dashed #ccc;
+    width: 400px;
+    height: 400px;
+    cursor: grab;
+    max-width: 100%;
+    max-height: 400px;
+}
+
+canvas:active {
+    cursor: grabbing;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+select {
+    background-color: #fdfdfd;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 1em);
+    background-position-y: center;
+    padding-right: 2.5em;
+}
+
+select option {
+    background-color: white;
+    color: #444;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+button, input[type="file"], select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button {
+    font: 600 1em 'Montserrat', sans-serif;
+    background-color: #78EEDD;
+    color: #555577;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #68ccbd;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#download-btn {
+    background-color: #ec93b1;
+}
+
+#download-btn:hover {
+    background-color: #c27f95;
+}
+
+input[type="range"] {
+    padding: 0;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    button, input[type="file"], select {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    canvas {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+        align-items: flex-start;
+        background-attachment: scroll;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 20px;
+        margin: 5px 0;
+    }
+    
+    .controls {
+        width: 100%;
+        max-width: 400px;
+        order: 2;
+    }
+    
+    .preview {
+        order: 1;
+        width: 100%;
+    }
+    
+    canvas {
+        width: 90vw;
+        height: 90vw;
+        max-width: 350px;
+        max-height: 350px;
+    }
+    
+    #title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    button, input[type="file"], select {
+        font-size: 16px;
+        padding: 14px;
+    }
+    
+    .button-row {
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .button-row button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 2px;
+    }
+    
+    .container {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    canvas {
+        width: 85vw;
+        height: 85vw;
+        max-width: 300px;
+        max-height: 300px;
+    }
+    
+    #title {
+        font-size: 1.2rem;
+    }
+    
+    button, input[type="file"], select {
+        padding: 12px;
+    }
+    
+    .control-group {
+        gap: 6px;
+    }
+    
+    label {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 320px) {
+    canvas {
+        width: 90vw;
+        height: 90vw;
+        max-width: 250px;
+        max-height: 250px;
+    }
+    
+    .container {
+        padding: 8px;
+    }
+    
+    button, input[type="file"], select {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>ProSEKAI SNS cover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="controls">
+        <h2 id="title" style="color: #7ed3c5">PANEL</h2>
+        <div class="control-group">
+            <label for="image-upload">Upload your image here</label>
+            <input type="file" id="image-upload" accept="image/*">
+        </div>
+        <div class="control-group">
+            <label for="preset-select">Select SNS</label>
+            <select id="preset-select">
+                <option value="">None</option>
+                <option value="cheer.png">VirtualSinger</option>
+                <option value="miku.png">Miku</option>
+                <option value="rin.png">Rin</option>
+                <option value="len.png">Len</option>
+                <option value="luka.png">luka</option>
+                <option value="meiko.png">MEIKO</option>
+                <option value="kaito.png">KAITO</option>
+                <option value="leoneed.png">Leo/need</option>
+                <option value="ichika.png">Ichika</option>
+                <option value="saki.png">Saki</option>
+                <option value="honami.png">Honami</option>
+                <option value="shiho.png">Shiho</option>
+                <option value="moremorejump.png">Leo/need</option>
+                <option value="minori.png">Minori</option>
+                <option value="haruka.png">Haruka</option>
+                <option value="shizuku.png">Shizuku</option>
+                <option value="vividbadsquad.png">Leo/need</option>
+                <option value="kohane.png">Kohane</option>
+                <option value="an.png">An</option>
+                <option value="akito.png">Akitoes</option>
+                <option value="toya.png">Toya</option>
+                <option value="wonderlandxshowtime.png">Leo/need</option>
+                <option value="tsukasa.png">Tsukasa</option>
+                <option value="emu.png">Emu</option>
+                <option value="nene.png">Nene</option>
+                <option value="rui.png">Rui</option>
+                <option value="nightcordat25.png">Leo/need</option>
+                <option value="kanade.png">Kanade</option>
+                <option value="mafuyu.png">Mafuyu</option>
+                <option value="ena.png">Ena</option>
+                <option value="mizuki.png">Mizuki</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="avatar-size">Avatar size</label>
+            <input type="range" id="avatar-size" min="0.1" max="2" value="1" step="0.01">
+        </div>
+        <div class="control-group">
+            <label>Rotation controls</label>
+            <div class="button-row">
+                <button id="rotate-left-btn">Left</button>
+                <button id="rotate-right-btn">Right</button>
+            </div>
+        </div>
+        <div class="control-group">
+            <label>Finish area</label>
+             <button id="download-btn" style="color: rgb(240, 240, 240)">Download avatar</button>
+        </div>
+    </div>
+    <div class="preview">
+        <h2 id="title" style="color: #eb90ae">PREVIEW</h2>
+        <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
