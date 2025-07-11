@@ -91,6 +91,7 @@ rotateRightBtn.addEventListener('click', () => {
 });
 
 downloadBtn.addEventListener('click', () => {
+    drawCircle();
     const dataURL = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.download = 'avatar.png';
@@ -98,6 +99,7 @@ downloadBtn.addEventListener('click', () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    drawCanvas();
 });
 
 function getEventCoordinates(e) {
@@ -201,4 +203,29 @@ function drawCanvas() {
     }
 }
 
+function drawCircle() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.clip();
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (avatarImage) {
+        ctx.save();
+        ctx.translate(avatarX, avatarY);
+        ctx.rotate(avatarAngle * Math.PI / 180);
+        ctx.scale(avatarScale, avatarScale);
+        ctx.drawImage(avatarImage, -avatarImage.width / 2, -avatarImage.height / 2);
+        ctx.restore();
+    }
+
+    if (presetImage) {
+        ctx.drawImage(presetImage, 0, 0, canvas.width, canvas.height);
+    }
+
+    ctx.restore();
+}
 drawCanvas();
