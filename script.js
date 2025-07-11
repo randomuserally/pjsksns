@@ -210,7 +210,7 @@ function drawCircle() {
     ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.clip();
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = '#00000000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     if (avatarImage) {
