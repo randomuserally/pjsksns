@@ -228,4 +228,5 @@ function drawCircle() {
 
     ctx.restore();
 }
+
 drawCanvas();
