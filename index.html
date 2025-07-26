@@ -13,47 +13,99 @@
     <div class="controls">
         <h2 id="title" style="color: #7ed3c5">PANEL</h2>
         <div class="control-group">
+            <div class="switch-container">
+                <span class="switch-label">Normal</span>
+                <label class="switch">
+                    <input type="checkbox" id="mode-switch-btn">
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label">Shipping</span>
+            </div>
+        </div>
+        <div class="control-group">
             <label for="image-upload">Upload your image here</label>
             <input type="file" id="image-upload" accept="image/*">
         </div>
-        <div class="control-group">
-            <label for="preset-select">Select SNS</label>
-            <select id="preset-select">
-                <option value="">None</option>
-                <option value="cheer.png">VirtualSinger</option>
-                <option value="miku.png">Miku</option>
-                <option value="rin.png">Rin</option>
-                <option value="len.png">Len</option>
-                <option value="luka.png">Luka</option>
-                <option value="meiko.png">MEIKO</option>
-                <option value="kaito.png">KAITO</option>
-                <option value="leoneed.png">Leo/need</option>
-                <option value="ichika.png">Ichika</option>
-                <option value="saki.png">Saki</option>
-                <option value="honami.png">Honami</option>
-                <option value="shiho.png">Shiho</option>
-                <option value="moremorejump.png">MORE MORE JUMP!</option>
-                <option value="minori.png">Minori</option>
-                <option value="haruka.png">Haruka</option>
-                <option value="airi.png">Airi</option>
-                <option value="shizuku.png">Shizuku</option>
-                <option value="vividbadsquad.png">Vivid BAD SQUAD</option>
-                <option value="kohane.png">Kohane</option>
-                <option value="an.png">An</option>
-                <option value="akito.png">Akitoes</option>
-                <option value="toya.png">Toya</option>
-                <option value="wonderlandxshowtime.png">Wonderland × Showtime</option>
-                <option value="tsukasa.png">Tsukasa</option>
-                <option value="emu.png">Emu</option>
-                <option value="nene.png">Nene</option>
-                <option value="rui.png">Rui</option>
-                <option value="nightcordat25.png">Nightcord at 25:00</option>
-                <option value="kanade.png">Kanade</option>
-                <option value="mafuyu.png">Mafuyu</option>
-                <option value="ena.png">Ena</option>
-                <option value="mizuki.png">Mizuki</option>
-            </select>
+        
+        <!-- Standard Mode Controls -->
+        <div id="standard-controls">
+            <div class="control-group">
+                <label for="preset-select">Select SNS</label>
+                <select id="preset-select">
+                    <option value="">None</option>
+                    <option value="cheer.png">VirtualSinger</option>
+                    <option value="miku.png">Miku</option>
+                    <option value="rin.png">Rin</option>
+                    <option value="len.png">Len</option>
+                    <option value="luka.png">Luka</option>
+                    <option value="meiko.png">MEIKO</option>
+                    <option value="kaito.png">KAITO</option>
+                    <option value="leoneed.png">Leo/need</option>
+                    <option value="ichika.png">Ichika</option>
+                    <option value="saki.png">Saki</option>
+                    <option value="honami.png">Honami</option>
+                    <option value="shiho.png">Shiho</option>
+                    <option value="moremorejump.png">MORE MORE JUMP!</option>
+                    <option value="minori.png">Minori</option>
+                    <option value="haruka.png">Haruka</option>
+                    <option value="airi.png">Airi</option>
+                    <option value="shizuku.png">Shizuku</option>
+                    <option value="vividbadsquad.png">Vivid BAD SQUAD</option>
+                    <option value="kohane.png">Kohane</option>
+                    <option value="an.png">An</option>
+                    <option value="akito.png">Akitoes</option>
+                    <option value="toya.png">Toya</option>
+                    <option value="wonderlandxshowtime.png">Wonderland × Showtime</option>
+                    <option value="tsukasa.png">Tsukasa</option>
+                    <option value="emu.png">Emu</option>
+                    <option value="nene.png">Nene</option>
+                    <option value="rui.png">Rui</option>
+                    <option value="nightcordat25.png">Nightcord at 25:00</option>
+                    <option value="kanade.png">Kanade</option>
+                    <option value="mafuyu.png">Mafuyu</option>
+                    <option value="ena.png">Ena</option>
+                    <option value="mizuki.png">Mizuki</option>
+                </select>
+            </div>
         </div>
+
+        <!-- Custom Mode Controls -->
+        <div id="custom-controls" class="hidden">
+            <div class="control-group">
+                <label for="textInput">Text</label>
+                <input type="text" id="textInput" placeholder="Enter text here">
+            </div>
+            <div class="control-group">
+                <label>Sticker 1</label>
+                <div class="custom-dropdown" id="sticker1-dropdown">
+                    <div class="dropdown-toggle" data-sticker-num="1">
+                        <span class="placeholder-text">Select a Sticker</span>
+                        <img src="" class="selected-preview-img hidden">
+                    </div>
+                    <div class="dropdown-menu">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label>Sticker 2</label>
+                <div class="custom-dropdown" id="sticker2-dropdown">
+                    <div class="dropdown-toggle" data-sticker-num="2">
+                        <span class="placeholder-text">Select a Sticker</span>
+                        <img src="" class="selected-preview-img hidden">
+                    </div>
+                    <div class="dropdown-menu">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label>Gradient Colors</label>
+                <div class="button-row">
+                    <input type="color" id="color1" value="#0093E9">
+                    <input type="color" id="color2" value="#80D0C7">
+                </div>
+            </div>
+        </div>
+        
         <div class="control-group">
             <label for="avatar-size">Avatar size</label>
             <input type="range" id="avatar-size" min="0.1" max="2" value="1" step="0.01">
