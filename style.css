@@ -69,11 +69,11 @@ body {
 canvas {
     border-radius: 50%;
     border: 1px dashed #ccc;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     cursor: grab;
     max-width: 100%;
-    max-height: 400px;
+    max-height: 600px;
     font-family: 'Rodin', sans-serif;
 }
 
@@ -275,7 +275,6 @@ input[type="color"]::-webkit-color-swatch {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Add these styles */
 .switch-container {
     display: flex;
     align-items: center;

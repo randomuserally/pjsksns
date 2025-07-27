@@ -192,9 +192,9 @@ function resizeCanvas() {
     canvas.style.width = size + 'px';
     canvas.style.height = size + 'px';
     
-    if (canvas.width !== 400) {
-        canvas.width = 400;
-        canvas.height = 400;
+    if (canvas.width !== 600) {
+        canvas.width = 600;
+        canvas.height = 600;
     }
     
     drawCanvas();
@@ -419,7 +419,7 @@ function drawCustomMode() {
     ctx.restore();
 
     // clip that cannot be exported
-    const innerRadius = canvas.width / 2 - 26; // adjust as needed
+    const innerRadius = canvas.width / 2 - 41; // adjust as needed
     ctx.save();
     ctx.beginPath();
     ctx.arc(canvas.width / 2, canvas.height / 2, innerRadius, 0, Math.PI * 2);
@@ -447,15 +447,15 @@ function drawCustomMode() {
         ctx, 
         text, // text input
         canvas.width / 2, // center X
-        canvas.height / 2.1, // center Y
+        canvas.height / 2.08, // center Y
         textRadius,
         Math.PI * 1.5  // starting angle (top)
     );
 
-    const scale = 0.37; // scale for stickers
+    const scale = 0.65; // scale for stickers
     const yPadding = 0; 
-    const gap = -169; // gap between stickers
-    const degree = 5; // rotation degree for stickers
+    const gap = -30; // gap between stickers
+    const degree = 8; // rotation degree for stickers
 
     let sticker1Loaded = sticker1Image.complete && sticker1Image.naturalHeight !== 0;
     let sticker2Loaded = sticker2Image.complete && sticker2Image.naturalHeight !== 0;
@@ -472,7 +472,7 @@ function drawCustomMode() {
         const centerY1 = yPos1 + (sticker1Image.naturalHeight * scale) / 2;
         ctx.save();
         ctx.translate(centerX1, centerY1);
-        ctx.rotate(-1 * degree * Math.PI / 180); // deg should be negative for left rotation
+        ctx.rotate(degree * Math.PI / 180); // deg should be negative for left rotation
         ctx.drawImage(
             sticker1Image,
             -(sticker1Image.naturalWidth * scale) / 2,
@@ -490,7 +490,7 @@ function drawCustomMode() {
         const centerY2 = yPos2 + (sticker2Image.naturalHeight * scale) / 2;
         ctx.save();
         ctx.translate(centerX2, centerY2);
-        ctx.rotate(degree * Math.PI / 180); // vice versa for right rotation
+        ctx.rotate(-1 * degree * Math.PI / 180); // vice versa for right rotation
         ctx.drawImage(
             sticker2Image,
             -(sticker2Image.naturalWidth * scale) / 2,
@@ -503,7 +503,7 @@ function drawCustomMode() {
 
     ctx.save(); 
     ctx.beginPath();
-    ctx.arc(canvas.width / 2, canvas.height / 2, 200, 0, Math.PI * 2);
+    ctx.arc(canvas.width / 2, canvas.height / 2, 300, 0, Math.PI * 2);
     ctx.lineWidth = 6; // the same as the frame image
     ctx.strokeStyle = "#666688";
     ctx.stroke();
@@ -532,7 +532,7 @@ function drawLayeredCircularText(ctx, text, centerX, centerY, radius, startAngle
     gradientColors.push(document.getElementById('color1').value); // start color
     gradientColors.push(document.getElementById('color2').value); // end color
 
-    const fontSize = 24; // adjust font size as needed
+    const fontSize = 40; // adjust font size as needed
     const font = `${fontSize}px ${FONT_FAMILY}`;
 
     const topTextColor = 'white';
