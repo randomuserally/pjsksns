@@ -73,26 +73,36 @@
                 <label for="textInput">Text</label>
                 <input type="text" id="textInput" placeholder="Enter text here">
             </div>
-            <div class="control-group">
-                <label>Sticker 1</label>
-                <div class="custom-dropdown" id="sticker1-dropdown">
-                    <div class="dropdown-toggle" data-sticker-num="1">
-                        <span class="placeholder-text">Select a Sticker</span>
-                        <img src="" class="selected-preview-img hidden">
+            <div id="stickers-container">
+                <div class="control-group">
+                    <label>Sticker 1</label>
+                    <div class="custom-dropdown" id="sticker1-dropdown">
+                        <div class="dropdown-toggle" data-sticker-num="1">
+                            <span class="placeholder-text">Select a Sticker</span>
+                            <img src="" class="selected-preview-img hidden">
+                        </div>
+                        <div class="dropdown-menu">
+                        </div>
                     </div>
-                    <div class="dropdown-menu">
+                </div>
+                <div class="control-group">
+                    <label>Sticker 2</label>
+                    <div class="custom-dropdown" id="sticker2-dropdown">
+                        <div class="dropdown-toggle" data-sticker-num="2">
+                            <span class="placeholder-text">Select a Sticker</span>
+                            <img src="" class="selected-preview-img hidden">
+                        </div>
+                        <div class="dropdown-menu">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="control-group">
-                <label>Sticker 2</label>
-                <div class="custom-dropdown" id="sticker2-dropdown">
-                    <div class="dropdown-toggle" data-sticker-num="2">
-                        <span class="placeholder-text">Select a Sticker</span>
-                        <img src="" class="selected-preview-img hidden">
-                    </div>
-                    <div class="dropdown-menu">
-                    </div>
+                <div class="control-group">
+                    <button id="add-sticker-btn">+ Add Sticker</button>
+                </div>
+                <div class="control-group">
+                    <button id="reset-stickers-btn"">Reset Stickers</button>
                 </div>
             </div>
             <div class="control-group">
@@ -101,6 +111,8 @@
                     <input type="color" id="color1" value="#0093E9">
                     <input type="color" id="color2" value="#80D0C7">
                 </div>
+                <label for="grad-dir">Gradient Direction</label>
+                <input type="range" id="grad-dir" min="0" max="360" value="0" step="1">
             </div>
         </div>
         
