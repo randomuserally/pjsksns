@@ -637,11 +637,6 @@ function drawStandardMode() {
     }
 }
 
-
-// idk how this shit work but while im watching umamusume ss1 ep12 and refactor it, it works somehow
-// dont touch it or idk anything broke
-// hour = 57
-// ^ increase this if it broken, to warn another dev
 function drawCustomMode() {
      // end color
 
