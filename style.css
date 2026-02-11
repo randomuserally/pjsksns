@@ -226,7 +226,6 @@ input[type="color"]::-webkit-color-swatch {
     display: none !important;
 }
 
-/* --- NEW STYLES FOR CUSTOM IMAGE DROPDOWN --- */
 .custom-dropdown {
     position: relative;
 }
